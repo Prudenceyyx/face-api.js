@@ -1,4 +1,14 @@
-# face-api.js
+# New Feature: Webcam Face Recognition
+The new feature is trying to integrate webcam face detection with image-based face recognition.
+
+
+cd examples/examples-browser
+node server.js
+find the result page at webcamPplMatch
+
+
+
+# Original README for face-api.js
 
 [![Build Status](https://travis-ci.org/justadudewhohacks/face-api.js.svg?branch=master)](https://travis-ci.org/justadudewhohacks/face-api.js)
 [![Slack](https://slack.bri.im/badge.svg)](https://slack.bri.im)
