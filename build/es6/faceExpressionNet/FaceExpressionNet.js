@@ -43,8 +43,8 @@ var FaceExpressionNet = /** @class */ (function (_super) {
     };
     FaceExpressionNet.prototype.predictExpressions = function (input) {
         return tslib_1.__awaiter(this, void 0, void 0, function () {
-            var netInput, out, probabilitesByBatch, predictionsByBatch;
             var _this = this;
+            var netInput, out, probabilitesByBatch, predictionsByBatch;
             return tslib_1.__generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, toNetInput(input)];

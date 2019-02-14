@@ -227,6 +227,7 @@
       // draw boxes with the corresponding label as text
       const labels = faceMatcher.labeledDescriptors
         .map(ld => ld.label)
+
       const boxesWithText = resizedResults
         .map(res => res.detection.box)
         .map((box, i) => new faceapi.BoxWithText(box, labels[i]))
@@ -242,13 +243,14 @@
       const canvas = $('#queryImgOverlay').get(0)
 
       const results = await faceapi
-        .detectAllFaces(imgEl, getFaceDetectorOptions())
+        .detectSingleFace(imgEl, getFaceDetectorOptions())
         .withFaceLandmarks()
         .withFaceDescriptors()
 
       // resize detection and landmarks in case displayed image is smaller than
       // original size
       resizedResults = resizeCanvasAndResults(imgEl, canvas, results)
+      
       // draw boxes with the corresponding label as text
       const boxesWithText = resizedResults.map(({ detection, descriptor }) =>
         new faceapi.BoxWithText(

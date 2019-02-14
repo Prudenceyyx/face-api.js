@@ -1,4 +1,5 @@
-import { TfjsImageRecognitionBase, TNetInput } from 'tfjs-image-recognition-base';
+import { TNetInput } from 'tfjs-image-recognition-base';
+import { ITinyYolov2Options, TinyYolov2Options } from 'tfjs-tiny-yolov2';
 
 import { WithFaceDescriptor, WithFaceDetection, WithFaceLandmarks } from '../factories';
 import { IMtcnnOptions, MtcnnOptions } from '../mtcnn/MtcnnOptions';
@@ -18,9 +19,9 @@ export async function allFacesSsdMobilenetv1(
 
 export async function allFacesTinyYolov2(
   input: TNetInput,
-  forwardParams: TfjsImageRecognitionBase.ITinyYolov2Options = {}
+  forwardParams: ITinyYolov2Options = {}
 ): Promise<WithFaceDescriptor<WithFaceLandmarks<WithFaceDetection<{}>>>[]> {
-  return await detectAllFaces(input, new TfjsImageRecognitionBase.TinyYolov2Options(forwardParams))
+  return await detectAllFaces(input, new TinyYolov2Options(forwardParams))
     .withFaceLandmarks()
     .withFaceDescriptors()
 }

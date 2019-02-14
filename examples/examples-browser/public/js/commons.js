@@ -49,6 +49,10 @@ function renderNavBar(navbarId, exampleUri) {
       name: 'Video Face Tracking'
     },
     {
+      uri: 'webcam_ppl_match',
+      name: 'Webcam People Match'
+    },
+    {
       uri: 'webcam_face_detection',
       name: 'Webcam Face Detection'
     },

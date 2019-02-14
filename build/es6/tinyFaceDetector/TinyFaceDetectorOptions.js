@@ -1,5 +1,5 @@
 import * as tslib_1 from "tslib";
-import { TfjsImageRecognitionBase } from 'tfjs-image-recognition-base';
+import { TinyYolov2Options } from 'tfjs-tiny-yolov2';
 var TinyFaceDetectorOptions = /** @class */ (function (_super) {
     tslib_1.__extends(TinyFaceDetectorOptions, _super);
     function TinyFaceDetectorOptions() {
@@ -8,6 +8,6 @@ var TinyFaceDetectorOptions = /** @class */ (function (_super) {
         return _this;
     }
     return TinyFaceDetectorOptions;
-}(TfjsImageRecognitionBase.TinyYolov2Options));
+}(TinyYolov2Options));
 export { TinyFaceDetectorOptions };
 //# sourceMappingURL=TinyFaceDetectorOptions.js.map

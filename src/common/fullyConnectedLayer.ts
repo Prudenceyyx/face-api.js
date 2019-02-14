@@ -1,9 +1,9 @@
 import * as tf from '@tensorflow/tfjs-core';
-import { TfjsImageRecognitionBase } from 'tfjs-image-recognition-base';
+import { FCParams } from 'tfjs-tiny-yolov2';
 
 export function fullyConnectedLayer(
   x: tf.Tensor2D,
-  params: TfjsImageRecognitionBase.FCParams
+  params: FCParams
 ): tf.Tensor2D {
   return tf.tidy(() =>
     tf.add(

@@ -16,10 +16,16 @@ export declare class Mtcnn extends NeuralNetwork<NetParams> {
     protected getDefaultModelName(): string;
     protected extractParamsFromWeigthMap(weightMap: tf.NamedTensorMap): {
         params: NetParams;
-        paramMappings: import("tfjs-image-recognition-base/build/commonjs/common").ParamMapping[];
+        paramMappings: {
+            originalPath?: string | undefined;
+            paramPath: string;
+        }[];
     };
     protected extractParams(weights: Float32Array): {
         params: NetParams;
-        paramMappings: import("tfjs-image-recognition-base/build/commonjs/common").ParamMapping[];
+        paramMappings: {
+            originalPath?: string | undefined;
+            paramPath: string;
+        }[];
     };
 }

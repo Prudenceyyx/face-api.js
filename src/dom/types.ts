@@ -1,4 +1,4 @@
-import { IPoint, IRect } from 'tfjs-image-recognition-base';
+import { IPoint, IRect } from 'tfjs-tiny-yolov2';
 
 import { WithFaceExpressions } from '../factories/WithFaceExpressions';
 

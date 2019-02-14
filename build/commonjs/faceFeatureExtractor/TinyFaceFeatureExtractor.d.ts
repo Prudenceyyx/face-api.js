@@ -8,10 +8,16 @@ export declare class TinyFaceFeatureExtractor extends NeuralNetwork<TinyFaceFeat
     protected getDefaultModelName(): string;
     protected extractParamsFromWeigthMap(weightMap: tf.NamedTensorMap): {
         params: TinyFaceFeatureExtractorParams;
-        paramMappings: import("tfjs-image-recognition-base/build/commonjs/common").ParamMapping[];
+        paramMappings: {
+            originalPath?: string | undefined;
+            paramPath: string;
+        }[];
     };
     protected extractParams(weights: Float32Array): {
         params: TinyFaceFeatureExtractorParams;
-        paramMappings: import("tfjs-image-recognition-base/build/commonjs/common").ParamMapping[];
+        paramMappings: {
+            originalPath?: string | undefined;
+            paramPath: string;
+        }[];
     };
 }

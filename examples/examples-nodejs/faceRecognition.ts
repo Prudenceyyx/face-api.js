@@ -1,6 +1,4 @@
-import * as faceapi from 'face-api.js';
-
-import { canvas, faceDetectionNet, faceDetectionOptions, saveFile } from './commons';
+import { canvas, faceapi, faceDetectionNet, faceDetectionOptions, saveFile } from './commons';
 
 const REFERENCE_IMAGE = '../images/bbt1.jpg'
 const QUERY_IMAGE = '../images/bbt4.jpg'

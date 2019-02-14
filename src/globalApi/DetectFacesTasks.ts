@@ -1,4 +1,5 @@
-import { TfjsImageRecognitionBase, TNetInput } from 'tfjs-image-recognition-base';
+import { TNetInput } from 'tfjs-image-recognition-base';
+import { TinyYolov2Options } from 'tfjs-tiny-yolov2';
 
 import { FaceDetection } from '../classes/FaceDetection';
 import { extendWithFaceDetection, WithFaceDetection } from '../factories/WithFaceDetection';
@@ -8,8 +9,8 @@ import { TinyFaceDetectorOptions } from '../tinyFaceDetector/TinyFaceDetectorOpt
 import { ComposableTask } from './ComposableTask';
 import { DetectAllFaceLandmarksTask, DetectSingleFaceLandmarksTask } from './DetectFaceLandmarksTasks';
 import { nets } from './nets';
-import { PredictAllFaceExpressionsTask, PredictSingleFaceExpressionTask } from './PredictFaceExpressionsTask';
 import { FaceDetectionOptions } from './types';
+import { PredictAllFaceExpressionsTask, PredictSingleFaceExpressionTask } from './PredictFaceExpressionsTask';
 
 export class DetectFacesTaskBase<TReturn> extends ComposableTask<TReturn> {
   constructor(
@@ -37,7 +38,7 @@ export class DetectAllFacesTask extends DetectFacesTaskBase<FaceDetection[]> {
         options instanceof SsdMobilenetv1Options
           ? (input: TNetInput) => nets.ssdMobilenetv1.locateFaces(input, options)
           : (
-            options instanceof TfjsImageRecognitionBase.TinyYolov2Options
+            options instanceof TinyYolov2Options
               ? (input: TNetInput) => nets.tinyYolov2.locateFaces(input, options)
               : null
           )

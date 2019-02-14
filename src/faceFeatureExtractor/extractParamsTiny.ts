@@ -1,17 +1,16 @@
-import { TfjsImageRecognitionBase } from 'tfjs-image-recognition-base';
+import { extractWeightsFactory, ParamMapping } from 'tfjs-image-recognition-base';
 
 import { extractorsFactory } from './extractorsFactory';
 import { TinyFaceFeatureExtractorParams } from './types';
 
+export function extractParamsTiny(weights: Float32Array): { params: TinyFaceFeatureExtractorParams, paramMappings: ParamMapping[] } {
 
-export function extractParamsTiny(weights: Float32Array): { params: TinyFaceFeatureExtractorParams, paramMappings: TfjsImageRecognitionBase.ParamMapping[] } {
-
-  const paramMappings: TfjsImageRecognitionBase.ParamMapping[] = []
+  const paramMappings: ParamMapping[] = []
 
   const {
     extractWeights,
     getRemainingWeights
-  } = TfjsImageRecognitionBase.extractWeightsFactory(weights)
+  } = extractWeightsFactory(weights)
 
   const {
     extractDenseBlock3Params

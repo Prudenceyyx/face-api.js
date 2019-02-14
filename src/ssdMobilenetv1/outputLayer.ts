@@ -70,7 +70,7 @@ export function outputLayer(
 
     scores = tf.reshape(
       scores,
-      [batchSize, scores.shape[1] as number]
+      [batchSize, scores.shape[1]]
     )
 
     const boxesByBatch = tf.unstack(boxes) as tf.Tensor2D[]
