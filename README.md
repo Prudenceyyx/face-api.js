@@ -1,9 +1,10 @@
 # New Feature: Webcam Face Recognition
 The new feature is trying to integrate webcam face detection with image-based face recognition.
 
-
+``` bash
 cd examples/examples-browser
 node server.js
+```
 find the result page at webcamPplMatch
 
 
